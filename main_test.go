@@ -74,7 +74,7 @@ func TestCafeCount(t *testing.T) {
 
 		require.Equal(t, http.StatusOK, response.Code)
 
-		body := response.Body.String()
+		body := strings.TrimSpace(response.Body.String())
 
 		if body == "" {
 			assert.Equal(t, v.want, 0)
@@ -109,7 +109,7 @@ func TestCafeSearch(t *testing.T) {
 
 		require.Equal(t, http.StatusOK, response.Code)
 
-		body := response.Body.String()
+		body := strings.TrimSpace(response.Body.String())
 
 		var cafes []string
 
